@@ -11,18 +11,14 @@
 </head>
 <body>
 
-<div id="navbar-div"><script type="text/javascript" src="/___vscode_livepreview_injected_script"></script><nav class="navbar">
-    <div class="logo">
-        <img src="AwayDayHubLogo.png" alt="Logo">
-    </div>
-    <div class="nav-links">
-        <a href="#match-discovery">Match Discovery</a>
-        <a href="#club-directory">Club Directory</a>
-        <a href="#match-day-guides">Match Day Guides</a>
-        <a href="#about-us">About Us</a>
-    </div>
-</nav>
-</div>
+<div id="navbar-div"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('navbar.html')
+        .then(response => response.text())
+        .then(text => document.getElementById('navbar-div').innerHTML = text);
+    });
+</script>
     
     <div class="hero-block">
         <p class="small-text">Match discovery</p>
