@@ -4,27 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
-<title>Away Day Hub</title>
+<title>Match discovery</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
 </head>
 <body>
 
-<div id="navbar-div"></div>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        fetch('navbar.html')
-        .then(response => response.text())
-        .then(text => document.getElementById('navbar-div').innerHTML = text);
-    });
-</script>
-
-<div class="hero-block">
-    <p class="small-text">Match discovery</p>
-    <h1>Find Your Next Football Match.</h1>
-    <p class="body-text">Got a trip planned? Want to catch a local game? Use our filters to search by date, city, or airport and we'll show you the matches. Easy as that. Start exploring below.</p>
-</div>
+    <div id="navbar-div"></div>
+<script src="script.js"></script>
+    
+    <div class="hero-block">
+        <p class="small-text">Match discovery</p>
+        <h1>Find Your Next Football Match.</h1>
+        <p class="body-text">Got a trip planned? Want to catch a local game? Use our filters to search by date, city, or airport and we'll show you the matches. Easy as that. Start exploring below.</p>
+    </div>
 
 <div class="sort-container">
     <div class="sort-dropdown" style="display: inline-block; border: 1px solid #ccc; border-radius: 30px; padding: 10px; cursor: pointer; background-color: #e0e0e0; margin: 10px 0;" id="sortDropdown" onclick="toggleSortDropdown()" onmouseleave="hideSortOptions()">
