@@ -57,11 +57,31 @@ function toggleDropdown(index) {
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 }
 
-function filterTable(columnIndex, value) {
-    activeFilters[columnIndex] = value;
-    applyFilters();
-    updateFilterIndicator();
+function filterTable(colIndex, filterValue) {
+    var table = document.getElementById('infoTable');
+    var rows = table.querySelectorAll('tr');
+    var isFilterActive = false;
+
+    for (var i = 1; i < rows.length; i++) {
+        var cellValue = rows[i].cells[colIndex].innerText;
+        if (cellValue !== filterValue) {
+            rows[i].style.display = 'none';
+        } else {
+            rows[i].style.display = '';
+            isFilterActive = true;  // Moved inside the loop to correctly detect any matching row
+        }
+    }
+
+    var filterIndicator = document.getElementById('filterIndicator');
+    var filterText = document.getElementById('filterText');
+    if (isFilterActive) {
+        filterIndicator.style.display = 'block';
+        filterText.innerText = 'Filtered by: ' + filterValue;
+    } else {
+        filterIndicator.style.display = 'none';
+    }
 }
+
 
 function applyFilters() {
     const table = document.getElementById('infoTable');
