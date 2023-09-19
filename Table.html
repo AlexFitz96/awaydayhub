@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Match discovery</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+</head>
+<body>
+
+    <div id="navbar-div"></div>
+<script src="script.js"></script>
+    
+    <div class="hero-block">
+        <p class="small-text">Match discovery</p>
+        <h1>Find Your Next Football Match.</h1>
+        <p class="body-text">Got a trip planned? Want to catch a local game? Use our filters to search by date, city, or airport and we'll show you the matches. Easy as that. Start exploring below.</p>
+    </div>
+      
+    <div class="sort-container">
+        <div class="sort-dropdown" style="display: inline-block; border: 1px solid #ccc; border-radius: 30px; padding: 10px; cursor: pointer; background-color: #e0e0e0; margin: 10px 0;" id="sortDropdown" onclick="toggleSortDropdown()" onmouseleave="hideSortOptions()">
+            <span id="sortLabel">Sort by: Date</span>
+            <div class="sort-options" id="sortOptions" onmouseleave="hideSortOptions()">
+                <div onclick="sortTable(0, 'text')">Match</div>
+                <div onclick="sortTable(1, 'text')">City</div>
+                <div onclick="sortTable(2, 'date')">Date</div>
+                <div onclick="sortTable(3, 'text')">Time</div>
+                <div onclick="sortTable(4, 'text')">Airport</div>
+                <div onclick="sortTable(5, 'text')">League</div>
+                <div onclick="sortTable(6, 'text')">Country</div>
+            </div>
+        </div>
+    </div>    
+
+<div id="filterIndicator" style="display: none;" class="filter-indicator">
+    <span id="filterText"></span>
+    <button onclick="clearFilter()">Clear All</button>
+</div>
+
+<table id="infoTable">
+    <thead>
+        <tr>
+            <th>
+                <div class="filter-dropdown" onclick="toggleDropdown(0)" onmouseleave="hideDropdown(0)">Match
+                    <div class="filter-options" id="filter0" onmouseleave="hideDropdown(0)"></div>
+                </div>
+            </th>            
+            <th>
+                <div class="filter-dropdown" onclick="toggleDropdown(1)" onmouseleave="hideDropdown(1)">City
+                    <div class="filter-options" id="filter1" onmouseleave="hideDropdown(1)"></div>
+                </div>
+            </th>
+            <th>
+                <div class="filter-dropdown" onclick="toggleDropdown(2)" onmouseleave="hideDropdown(2)">Date
+                    <div class="filter-options" id="filter2" onmouseleave="hideDropdown(2)">
+                        <div onclick="filterByMonth('January')">January</div>
+                        <div onclick="filterByMonth('February')">February</div>
+                        <div onclick="filterByMonth('March')">March</div>
+                        <div onclick="filterByMonth('April')">April</div>
+                        <div onclick="filterByMonth('May')">May</div>
+                        <div onclick="filterByMonth('June')">June</div>
+                        <div onclick="filterByMonth('July')">July</div>
+                        <div onclick="filterByMonth('August')">August</div>
+                        <div onclick="filterByMonth('September')">September</div>
+                        <div onclick="filterByMonth('October')">October</div>
+                        <div onclick="filterByMonth('November')">November</div>
+                        <div onclick="filterByMonth('December')">December</div>
+                    </div>
+                </div>                               
+            </th>                                                                                      
+            <th>
+                <div class="filter-dropdown" onclick="toggleDropdown(3)" onmouseleave="hideDropdown(3)">Time
+                    <div class="filter-options" id="filter3" onmouseleave="hideDropdown(3)"></div>
+                </div>
+            </th>
+            <th>
+                <div class="filter-dropdown" onclick="toggleDropdown(4)" onmouseleave="hideDropdown(4)">Airport
+                    <div class="filter-options" id="filter4" onmouseleave="hideDropdown(4)"></div>
+                </div>
+            </th>
+            <th>
+                <div class="filter-dropdown" onclick="toggleDropdown(5)" onmouseleave="hideDropdown(5)">League
+                    <div class="filter-options" id="filter5" onmouseleave="hideDropdown(5)"></div>
+                </div>
+            </th>
+            <th>
+                <div class="filter-dropdown" onclick="toggleDropdown(6)" onmouseleave="hideDropdown(6)">Country
+                    <div class="filter-options" id="filter6" onmouseleave="hideDropdown(6)"></div>
+                </div>
+            </th>
+            <th>
+                <div class="">Tickets
+                    <div class="filter-options" id="filter7"></div>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data from Google Sheets will be populated here -->
+    </tbody>
+</table>
+
+<script src="script.js"></script>
+
+<div class="results-control">
+    <label for="resultsPerPage">Show results: </label>
+    <select id="resultsPerPage" onchange="updateResultsPerPage()">
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="150">150</option>
+        <option value="200">200</option>
+    </select>    
+</div>
+
+<div id="footer-placeholder"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('footer.html')
+        .then(response => response.text())
+        .then(text => document.getElementById('footer-placeholder').innerHTML = text);
+    });
+</script>
+
+</body>
+
+</html>
