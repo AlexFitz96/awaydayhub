@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,45 +5,34 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="styles.css">
 <title>Away Day Hub</title>
-</head>
-<body>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="styles.css">
-<title>Match discovery</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/css/pikaday.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.8.0/pikaday.min.js"></script>
 </head>
 <body>
 
-    <div id="navbar-div"></div>
-<script src="script.js"></script>
-    
-    <div class="hero-block">
-        <p class="small-text">Match discovery</p>
-        <h1>Find Your Next Football Match.</h1>
-        <p class="body-text">Got a trip planned? Want to catch a local game? Use our filters to search by date, city, or airport and we'll show you the matches. Easy as that. Start exploring below.</p>
-    </div>
-      
-    <div class="sort-container">
-        <div class="sort-dropdown" style="display: inline-block; border: 1px solid #ccc; border-radius: 30px; padding: 10px; cursor: pointer; background-color: #e0e0e0; margin: 10px 0;" id="sortDropdown" onclick="toggleSortDropdown()" onmouseleave="hideSortOptions()">
-            <span id="sortLabel">Sort by: Date</span>
-            <div class="sort-options" id="sortOptions" onmouseleave="hideSortOptions()">
-                <div onclick="sortTable(0, 'text')">Match</div>
-                <div onclick="sortTable(1, 'text')">City</div>
-                <div onclick="sortTable(2, 'date')">Date</div>
-                <div onclick="sortTable(3, 'text')">Time</div>
-                <div onclick="sortTable(4, 'text')">Airport</div>
-                <div onclick="sortTable(5, 'text')">League</div>
-                <div onclick="sortTable(6, 'text')">Country</div>
-            </div>
+<div id="navbar-div"></div>
+
+<div class="hero-block">
+    <p class="small-text">Match discovery</p>
+    <h1>Find Your Next Football Match.</h1>
+    <p class="body-text">Got a trip planned? Want to catch a local game? Use our filters to search by date, city, or airport and we'll show you the matches. Easy as that. Start exploring below.</p>
+</div>
+
+<div class="sort-container">
+    <div class="sort-dropdown" style="display: inline-block; border: 1px solid #ccc; border-radius: 30px; padding: 10px; cursor: pointer; background-color: #e0e0e0; margin: 10px 0;" id="sortDropdown" onclick="toggleSortDropdown()" onmouseleave="hideSortOptions()">
+        <span id="sortLabel">Sort by: Date</span>
+        <div class="sort-options" id="sortOptions" onmouseleave="hideSortOptions()">
+            <div onclick="sortTable(0, 'text')">Match</div>
+            <div onclick="sortTable(1, 'text')">City</div>
+            <div onclick="sortTable(2, 'date')">Date</div>
+            <div onclick="sortTable(3, 'text')">Time</div>
+            <div onclick="sortTable(4, 'text')">Airport</div>
+            <div onclick="sortTable(5, 'text')">League</div>
+            <div onclick="sortTable(6, 'text')">Country</div>
         </div>
-    </div>    
+    </div>
+</div>    
 
 <div id="filterIndicator" style="display: none;" class="filter-indicator">
     <span id="filterText"></span>
@@ -105,6 +93,8 @@
             <th>
                 <div class="">Tickets
                     <div class="filter-options" id="filter7"></div>
+                </div>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -133,34 +123,5 @@
     });
 </script>
 
-</body>
-
-</html>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-    <footer>
-        <div class="footer-container">
-            <div class="footer-logo">
-                <img src="AwayDayHubLogo.png" alt="Logo">
-            <div class="footer-links">
-                <a href="#link1">Link 1</a>
-                <a href="#link2">Link 2</a>
-                <a href="#link3">Link 3</a>
-            </div>
-            <div class="footer-copyright">
-                <p>Copyright © 2023 Your Company</p>
-                <p>Contact: info@yourcompany.com</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
-
-<script src="script.js"></script>
 </body>
 </html>
