@@ -12,6 +12,13 @@
 <body>
 
 <div id="navbar-div"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('navbar.html')
+        .then(response => response.text())
+        .then(text => document.getElementById('navbar-div').innerHTML = text);
+    });
+</script>
 
 <div class="hero-block">
     <p class="small-text">Match discovery</p>
